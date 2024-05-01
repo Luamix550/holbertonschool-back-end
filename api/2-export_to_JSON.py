@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+script to export data in the JSON format
+"""
 import requests
 import json
 from sys import argv
@@ -6,8 +10,8 @@ if __name__ == "__main__":
 
     id = int(argv[1])
 
-    response = requests.get(f'https://jsonplaceholder.typicode.com/users/{id}?_embed=todos')
-    all_data = response.json()
+    r = requests.get(f'https://jsonplaceholder.typicode.com/users/{id}?_embed=todos')
+    all_data = r.json()
 
     username = all_data.get("username")
 
