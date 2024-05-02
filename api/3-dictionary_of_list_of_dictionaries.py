@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+script to export data in the JSON format.
 """
 import json
 import requests
@@ -11,16 +11,16 @@ if __name__ == "__main__":
     users = response.json()
 
     all_tasks = {}
-    
+
     for user in users:
         user_id = str(user['id'])
         username = user['username']
         user_tasks = []
-        
+
         url = f"https://jsonplaceholder.typicode.com/users/{user_id}/todos"
         response = requests.get(url)
         tasks = response.json()
-        
+
         for task in tasks:
             user_tasks.append({
                 "username": username,
