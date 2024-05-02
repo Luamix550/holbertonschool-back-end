@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     filename = f"{id}.csv"
     with open(filename, mode='w', newline='') as file:
-        writer = csv.writer(file, dialect="unix")
+        writer = csv.writer(file, dialect="unix", )
         for task in tasks:
             completed_status = "True" if task["completed"] else "False"
             writer.writerow([id, username, completed_status, task["title"]])
